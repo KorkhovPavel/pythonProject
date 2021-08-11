@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # img
-img = cv2.imread('img/331541.jpg')
+img = cv2.imread('img/79360.jpg')
 
 # изменение размера
 # img = cv2.resize(img, (img.shape[1] // 2, img.shape[0] // 2))
@@ -13,7 +13,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # выделение контуров
 img = cv2.Canny(img, 200, 200)
 # обводка контуров
-karnel = np.ones((1,1), np.uint8)
+karnel = np.ones((1, 1), np.uint8)
 img = cv2.dilate(img, karnel, iterations=1)
 # уменьшение толщины контура обводки
 img = cv2.erode(img, karnel, iterations=1)
