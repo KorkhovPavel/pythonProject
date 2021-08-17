@@ -26,8 +26,9 @@ import numpy as np
 #         break
 
 
-img = cv2.imread('img/79360.jpg')
-new_img = np.zeros(img.shape , np.uint8)
+img = cv2.imread('../img/2021.08.16_09_16_33_qrcode.png')
+new_img = np.zeros(img.shape, np.uint8)
+new_img[:] = 155, 120, 120
 
 # отзеркаливание
 # img = cv2.flip(img, 1)
@@ -68,7 +69,9 @@ c, h = cv2.findContours(img, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
 print(c)
 # контуры изображения  переносим на новую картинку
 
-cv2.drawContours(new_img,c, -1, (255, 0, 0), thickness=1)
+cv2.drawContours(new_img, c, -1, (0, 0, 0), thickness=1)
+
+cv2.imwrite('Image.jpg', new_img)
 
 cv2.imshow('res', new_img)
 
