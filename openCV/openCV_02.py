@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # img
-img = cv2.imread('../img/2021.08.16_09_16_33_qrcode.png')
+# img = cv2.imread('../img/2021.08.16_09_16_33_qrcode.png')
 
 # изменение размера
 # img = cv2.resize(img, (img.shape[1] // 2, img.shape[0] // 2))
@@ -18,21 +18,21 @@ img = cv2.imread('../img/2021.08.16_09_16_33_qrcode.png')
 # # уменьшение толщины контура обводки
 # img = cv2.erode(img, karnel, iterations=1)
 
-cv2.imshow('res', img)
+# cv2.imshow('res', img)
 # print(img.shape)
-cv2.waitKey(0)
+# cv2.waitKey(0)
 
 # # video
 
 # cap = cv2.VideoCapture('video/video_2021-08-04_19-14-00.mp4')
 
-# # камера
-# # cap = cv2.VideoCapture(0)
-# # cap.set(3,500)
-# # cap.set(4,400)
+# камера
+cap = cv2.VideoCapture(0)
+cap.set(3,500)
+cap.set(4,400)
 
-# while True:
-#     success, img = cap.read()
-#     cv2.imshow('res', img)
-#     if cv2.waitKey(1) & 0xFF == ord('q'):
-#         break
+while True:
+    success, img = cap.read()
+    cv2.imshow('res', img)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
